@@ -5,10 +5,8 @@ return [
     ],
     'id' => 'api-app',
     'basePath' => __DIR__,
-    // this is where the application will find all controllers
-    'controllerNamespace' => 'api\v1\controllers',
     'modules' => [
-        'buyer' => [
+        'v1' => [
             'class' => 'api\v1\Module',
         ],
     ],
@@ -24,6 +22,22 @@ return [
             'identityClass' => 'api\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-api', 'httpOnly' => true],
+        ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            // 'rules' => [
+            //     [
+            //         'class' => 'yii\rest\UrlRule',
+            //         'controller' => [
+            //             'v1/site',
+            //         ],
+            //         'pluralize' => false,
+            //         'extraPatterns'=>[
+            //             // 'GET get-addresses/<id:\d+>' => 'get-addresses',
+            //         ],
+            //     ],
+            // ],
         ],
     ],
 ];
